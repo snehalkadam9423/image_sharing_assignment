@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: image_sharing_app
+  pool: 5
+  username: postgres
+  password: India@1234

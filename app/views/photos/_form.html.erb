@@ -1,0 +1,25 @@
+<div class="row-fluid">
+  <div class="span4 well">
+    <%= form_for [@album, @photo], :html => {:class => "form-horizontal"} do |form| %>
+      <fieldset>
+        <legend>Photo Form</legend>
+        <div class="control-group">
+          <%= form.label :tagline, :class => "control-label" %>
+          <div class="controls">
+            <%= form.text_field :tagline, :class => "input-xlarge" %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= form.label :upload_image, :class => "control-label" %>
+          <div class="controls">
+            <%= form.file_field :image, :class => "input-xlarge" %>
+          </div>
+        </div>
+        <br>
+        <div class="form-actions">
+          <%= form.submit :class => "btn btn-primary" %>
+        </div>
+      </fieldset>
+    <% end %>
+  </div>
+</div>

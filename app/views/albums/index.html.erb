@@ -1,0 +1,27 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">Name</th>
+			<th scope="col">Created Date</th>
+			<th scope="col">Edit</th>
+			<th scope="col">Destroy</th>
+			<th scope="col">Show</th>
+			<th scope="col">Photos</th>
+		</tr>
+	</thead>
+	<tbody>
+		<%@albums.each do |album|%>
+			<tr>
+				<td><%= album.name %></td>
+				<td><%= album.created_at %></td>
+				<td><%= link_to 'Edit', edit_album_path(album) %></td>
+	      <td><%= link_to 'Delete', album_path(album),
+	              method: :delete,
+	              data: { confirm: 'Are you sure?' } %></td>
+	      <td><%= link_to 'Show', album_path(album) %></td>
+	      <td><%= link_to "Add photos", new_album_photo_path(album) %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+<%= link_to "New Album", new_album_path %>

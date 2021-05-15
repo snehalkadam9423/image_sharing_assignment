@@ -1,0 +1,28 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">Tagline</th>
+			<th scope="col">Created Date</th>
+			<th scope="col">Image</th>
+			<th scope="col">Edit</th>
+			<th scope="col">Destroy</th>
+			<th scope="col">Show</th>
+			<th scope="col">Photos</th>
+		</tr>
+	</thead>
+	<tbody>
+		<%@album.photos.each do |photo|%>
+			<tr>
+				<td><%= photo.tagline %></td>
+				<td><%= photo.created_at %></td>
+				<td><%= image_tag photo.image.url, style: "height:100px;width:100px" %> </td>
+				<td><%= link_to 'Edit', edit_album_photo_path(photo.album_id, photo) %></td>
+				<td><%= link_to 'Delete', album_photo_path(photo.album_id, photo),
+								method: :delete,
+								data: { confirm: 'Are you sure?' } %></td>
+				<td><%= link_to 'Show', album_photo_path(photo.album_id, photo) %></td>
+			</tr>	
+		<% end %>
+	</tbody>
+</table>
+<%= link_to "Album Listing", albums_path %>
