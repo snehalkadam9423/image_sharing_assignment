@@ -15,7 +15,7 @@
 			<%@album.photos.each do |photo|%>
 				<tr>
 					<td><%= photo.tagline %></td>
-					<td><%= photo.created_at %></td>
+					<td><%= photo.created_at.strftime("%B %d, %Y") %></td>
 					<td><%= image_tag photo.image.url, style: "height:100px;width:100px" %></td>
 					<td><%= link_to 'Edit', edit_album_photo_path(photo.album_id, photo) %></td>
 					<td><%= link_to 'Delete', album_photo_path(photo),

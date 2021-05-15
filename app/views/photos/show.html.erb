@@ -1,6 +1,6 @@
 <b>Tagline: </b><%= @photo.tagline %>
 <br>
-<b>created Date:</b> <%= @photo.created_at %>
+<b>created Date:</b> <%= @photo.created_at.strftime("%B %d, %Y") %>
 <br>
 <b>Image: </b><%= image_tag @photo.image.url, style: "height:100px;width:100px" %>
 <br>

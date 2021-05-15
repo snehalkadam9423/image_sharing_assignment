@@ -1,0 +1,21 @@
+<br>
+<br>
+<h1><%=@user.name%>'s Profile</h1>
+<div class="container">
+	<div class="row">
+		<% @albums.each do |album|%>
+			<div class="col-md-4 col-sm-6">
+				<div class="product-grid2">
+					<div class="product-image2">
+						<%= image_tag album.photos.first.image.url, class: "pic-1" %>
+					</div>
+					<div class="product-content">
+						<h3 class="title">
+							<%= link_to album.name, show_album_album_path(album), style: "color:blue;text-decoration: underline"%>
+						</h3>
+					</div>
+				</div>
+			</div>
+		<%end%>
+	</div>
+</div>

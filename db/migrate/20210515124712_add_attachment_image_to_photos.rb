@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# rubocop:todo Style/Documentation
 class AddAttachmentImageToPhotos < ActiveRecord::Migration[5.0]
   def self.up
     change_table :photos do |t|
@@ -9,3 +12,4 @@ class AddAttachmentImageToPhotos < ActiveRecord::Migration[5.0]
     remove_attachment :photos, :image
   end
 end
+# rubocop:enable Style/Documentation
