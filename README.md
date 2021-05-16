@@ -1,25 +1,19 @@
-# README
+## 1. Ruby version: 2.3.1
+Install ruby with above version
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+--------------------------
+## 2. Database Application
+###### Postgres
 
-Things you may want to cover:
+--------------------------
+## 3. Configure application
+Configure `Environment variable` for SMTP setting
+sudo nano ~/.bashrc
+Add below details
+export SENDMAIL_PASSWORD=Your gmail account password
+export SENDMAIL_USERNAME=Your gmail account email  
+export MAIL_HOST=localhost:3000
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
+## 4. Services (Error Email Notifications)
+Configure in `./config/application.rb`
+Configure in `./app/mailers/application_mailer.rb`
