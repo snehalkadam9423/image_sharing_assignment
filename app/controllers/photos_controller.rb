@@ -1,16 +1,9 @@
 class PhotosController < ApplicationController
   before_action :authenticate_user!
-  def index
-    @album = Album.find_by_id(params[:album_id])
-  end
-
-  def edit
-    @album = Album.find_by_id(params[:album_id])
-    @photo = Photo.find_by_id(params[:id])
-  end
-
+  before_action :set_album, only: [:index, :edit]
+  before_action :set_photo, only: [:update, :edit, :destroy]
+  
   def update
-    @photo = Photo.find_by_id(params[:id])
     if @photo.update(photo_params)
       redirect_to album_photos_path
     else
@@ -18,12 +11,7 @@ class PhotosController < ApplicationController
     end
   end
 
-  def show
-    @photo = Photo.find_by_id(params[:id])
-  end
-
   def destroy
-    @photo = Photo.find_by_id(params[:id])
     @photo.destroy
     redirect_to album_photos_path
   end
@@ -32,5 +20,13 @@ class PhotosController < ApplicationController
 
   def photo_params
     params.require(:photo).permit(:tagline, :image)
+  end
+
+  def set_album
+    @album = Album.find_by_id(params[:album_id])
+  end
+
+  def set_photo
+    @photo = Photo.find_by_id(params[:id])
   end
 end

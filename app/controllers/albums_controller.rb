@@ -1,5 +1,6 @@
 class AlbumsController < ApplicationController
   before_action :authenticate_user!, except: [:show_album]
+  before_action :set_album, only: [:edit, :update, :show, :destroy, :show_album]
   def new
     @album = Album.new
     1.times { @album.photos.build }
@@ -18,12 +19,7 @@ class AlbumsController < ApplicationController
     @albums = current_user.albums
   end
 
-  def edit
-    @album = Album.find_by_id(params[:id])
-  end
-
   def update
-    @album = Album.find_by_id(params[:id])
     if @album.update(album_params)
       redirect_to albums_path
     else
@@ -31,18 +27,12 @@ class AlbumsController < ApplicationController
     end
   end
 
-  def show
-    @album = Album.find_by_id(params[:id])
-  end
-
   def destroy
-    @album = Album.find_by_id(params[:id])
     @album.destroy
     redirect_to albums_path
   end
 
   def show_album
-    @album = Album.find_by_id(params[:id])
     @photos = @album.photos
   end
 
@@ -52,7 +42,7 @@ class AlbumsController < ApplicationController
     params.require(:album).permit(:name, photos_attributes: [:id, :tagline, :image, :_destroy])
   end
 
-  # def photo_params
-  #   params.require(:album).permit(photos_attributes: [:id, :tagline, :image, :_destroy])
-  # end
+  def set_album
+    @album = Album.find_by_id(params[:id])
+  end
 end

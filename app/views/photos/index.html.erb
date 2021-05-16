@@ -1,3 +1,5 @@
+<h1>Photo's of <%= @album.name%> Album</h1>
+
 <table class="table">
 	<thead>
 		<tr>
@@ -7,7 +9,6 @@
 			<th scope="col">Edit</th>
 			<th scope="col">Destroy</th>
 			<th scope="col">Show</th>
-			<th scope="col">Photos</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -20,7 +21,6 @@
 				<td><%= link_to 'Delete', album_photo_path(photo.album_id, photo),
 								method: :delete,
 								data: { confirm: 'Are you sure?' } %></td>
-				<td><%= link_to 'Show', album_photo_path(photo.album_id, photo) %></td>
 			</tr>
 		<% end %>
 	</tbody>
