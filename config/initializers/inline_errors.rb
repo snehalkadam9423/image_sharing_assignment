@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 ActionView::Base.field_error_proc = proc do |html_tag, instance|
   if html_tag =~ /^<label/
     html_tag.to_s.html_safe

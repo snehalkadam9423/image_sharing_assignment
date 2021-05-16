@@ -10,7 +10,6 @@ gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
-gem 'letter_opener'
 gem 'paperclip'
 gem 'pg'
 gem 'puma', '~> 3.0'
@@ -23,7 +22,6 @@ gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'byebug', platform: :mri
-  gem 'rubocop-rails', require: false
 end
 
 group :development do

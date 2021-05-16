@@ -14,10 +14,10 @@
 				<td><%= album.name %></td>
 				<td><%= album.created_at.strftime("%B %d, %Y") %></td>
 				<td><%= link_to 'Edit', edit_album_path(album) %></td>
-	      <td><%= link_to 'Delete', album_path(album),
-	              method: :delete,
-	              data: { confirm: 'Are you sure?' } %></td>
-	      <td><%= link_to 'Show', album_path(album) %></td>
+				<td><%= link_to 'Delete', album_path(album),
+								method: :delete,
+								data: { confirm: 'Are you sure?' } %></td>
+				<td><%= link_to 'Show', album_path(album) %></td>
 			</tr>
 		<% end %>
 	</tbody>
