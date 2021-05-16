@@ -1,6 +1,3 @@
-# frozen_string_literal: true
-
-# rubocop:todo Style/Documentation
 class PhotosController < ApplicationController
   before_action :authenticate_user!
   def new
@@ -53,4 +50,3 @@ class PhotosController < ApplicationController
     params.require(:photo).permit(:tagline, :image)
   end
 end
-# rubocop:enable Style/Documentation

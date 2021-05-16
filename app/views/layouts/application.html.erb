@@ -15,8 +15,8 @@
 			<%= link_to 'Your albums', albums_path, style: "font-size:25px;font-weight:400"%>
 			<a href="/users/sign_out" data-method="delete" rel="nofollow", style="font-size:25px;font-weight:400" >Logout</a>
 		<% else%>
-			<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-		  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+			<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link', style: "font-size:25px;font-weight:400"%>
+			<%= link_to "Login", new_user_session_path, :class => 'navbar-link', style: "font-size:25px;font-weight:400"%>
 		<% end %>
 		<%= link_to "Home Page", root_path,  style: "font-size:25px;font-weight:400"  %>
 			<%= yield %>

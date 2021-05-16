@@ -5,6 +5,7 @@
 <div class="container">
 	<div class="row">
 		<% @photos.each do |photo|%>
+			<% album = Album.find_by_id(photo.album_id)%>
 			<div class="col-md-4 col-sm-6">
 				<div class="product-grid2">
 					<div class="product-image2">
@@ -12,7 +13,8 @@
 					</div>
 					<div class="product-content">
 						<h3 class="title">
-							<%= link_to photo.album.user.name, user_profile_path(photo.album.user.id), style: "color:blue;text-decoration: underline"%>
+
+							<%= link_to album.user.name, user_profile_path(album.user.id), style: "color:blue;text-decoration: underline"%>
 						</h3>
 					</div>
 				</div>

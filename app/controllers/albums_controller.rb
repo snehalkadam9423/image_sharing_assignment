@@ -1,15 +1,12 @@
-# frozen_string_literal: true
-
-# rubocop:todo Style/Documentation
 class AlbumsController < ApplicationController
   before_action :authenticate_user!, except: [:show_album]
   def new
     @album = Album.new
+    1.times { @album.photos.build }
   end
 
   def create
-    @album = Album.new(album_params)
-    @album.user_id = current_user.id
+    @album = current_user.albums.build(album_params)
     if @album.save
       redirect_to albums_path
     else
@@ -52,7 +49,10 @@ class AlbumsController < ApplicationController
   private
 
   def album_params
-    params.require(:album).permit(:name)
+    params.require(:album).permit(:name, photos_attributes: [:id, :tagline, :image, :_destroy])
   end
+
+  # def photo_params
+  #   params.require(:album).permit(photos_attributes: [:id, :tagline, :image, :_destroy])
+  # end
 end
-# rubocop:enable Style/Documentation
