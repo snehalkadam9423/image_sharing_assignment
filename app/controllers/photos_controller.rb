@@ -1,21 +1,5 @@
 class PhotosController < ApplicationController
   before_action :authenticate_user!
-  def new
-    @album = Album.find_by_id(params[:album_id])
-    @photo = @album.photos.build
-  end
-
-  def create
-    @album = Album.find_by_id(params[:album_id])
-    @photo = Photo.new(photo_params)
-    @photo.album_id = @album.id
-    if @photo.save
-      redirect_to album_photos_path
-    else
-      render :new
-    end
-  end
-
   def index
     @album = Album.find_by_id(params[:album_id])
   end
