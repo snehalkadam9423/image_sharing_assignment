@@ -2,18 +2,21 @@
 Install ruby with above version
 
 --------------------------
-## 2. Database Application
-###### Postgres
+## 2. Database Used
+Postgres
 
 --------------------------
 ## 3. Configure application
 Configure `Environment variable` for SMTP setting
+<br />
+edit bashrc file
+<br />
 sudo nano ~/.bashrc
+<br />
 Add below details
 export SENDMAIL_PASSWORD=Your gmail account password
-export SENDMAIL_USERNAME=Your gmail account email  
+<br />
+export SENDMAIL_USERNAME=Your gmail account email id
+<br />
 export MAIL_HOST=localhost:3000
-
-## 4. Services (Error Email Notifications)
-Configure in `./config/application.rb`
-Configure in `./app/mailers/application_mailer.rb`
+<br />
