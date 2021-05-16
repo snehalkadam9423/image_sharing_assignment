@@ -14,9 +14,11 @@ edit bashrc file
 sudo nano ~/.bashrc
 <br />
 Add below details
+<br>
 export SENDMAIL_PASSWORD=Your gmail account password
 <br />
 export SENDMAIL_USERNAME=Your gmail account email id
 <br />
 export MAIL_HOST=localhost:3000
 <br />
+--------------------------
