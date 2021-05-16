@@ -21,6 +21,7 @@
 				<td><%= link_to 'Delete', album_photo_path(photo.album_id, photo),
 								method: :delete,
 								data: { confirm: 'Are you sure?' } %></td>
+				<td><%= link_to 'Show', album_photo_path(photo.album_id, photo) %></td>
 			</tr>
 		<% end %>
 	</tbody>
