@@ -21,4 +21,3 @@ export SENDMAIL_USERNAME=Your gmail account email id
 <br />
 export MAIL_HOST=localhost:3000
 <br />
---------------------------
